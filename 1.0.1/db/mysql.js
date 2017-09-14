@@ -1,0 +1,1 @@
+"use strict";var e=require("path"),r=process.cwd(),s=require("speedt-mysql"),t=require(e.join(r,"settings")).mysql;exports=module.exports=new s(t);

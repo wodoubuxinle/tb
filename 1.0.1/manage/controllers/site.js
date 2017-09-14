@@ -1,0 +1,1 @@
+"use strict";var e=require("emag.biz"),s=require("../settings");exports.indexUI=function(e,r,i){r.render("site/index",{conf:s,description:"",keywords:",html5",data:{session_user:e.session.user,nav_choose:",01,"}})},exports.welcomeUI=function(e,r,i){r.render("site/welcome",{conf:s,description:"",keywords:",html5"})};

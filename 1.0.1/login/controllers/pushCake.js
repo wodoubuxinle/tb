@@ -1,0 +1,1 @@
+"use strict";var e=require("emag.biz"),r=require("../settings"),i=require("speedt-utils").utils;exports.indexUI=function(e,i,t){i.render("pushCake/1_0_1",{conf:r,data:{}})};

@@ -1,0 +1,1 @@
+"use strict";exports.redis=require("./redis"),exports.mysql=require("./mysql");
