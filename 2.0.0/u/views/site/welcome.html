@@ -1,0 +1,81 @@
+#parse('_pagelet/constant.html')
+<!DOCTYPE html>
+<html>
+	<head>
+		#parse('_pagelet/header.html')
+		<title>欢迎页</title>
+		<link rel='stylesheet' type='text/css' media='screen' href='${conf.html.virtualPath}public/assets/css/iframe.css' />
+		<style>
+		.bd {
+		  font-weight: bold;;
+		}
+		</style>
+	</head>
+	<body>
+		<div class='container'>
+			<div class='row'>
+				<div class='col-sm-12 col-md-12'>
+					<ol class='breadcrumb'>
+						<li class='active'><i class='fa fa-home fa-fw'></i> 首页</li>
+					</ol>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-12 col-md-12'>
+					<div class='panel panel-default table-responsive'>
+						<table id='table1' data-olx-type='olx.grid'
+							class='table table-bordered table-hover table-condensed table-striped'
+							data-url='' data-current='1' data-pagesize='20' data-count='561'>
+							#*<!-- <thead>
+								<tr>
+									<th class='ta'>#</th>
+									<th>昵称</th>
+									<th>元宝</th>
+									<th>注册时间</th>
+									<th>操作</th>
+								</tr>
+							</thead> -->*#
+							<tbody>
+								<tr>
+									<td class='bd'>编号</td>
+									<td>$!{data.user.id}</td>
+									<td class='bd'>昵称</td>
+									<td>$!{data.user.nickname}</td>
+								</tr>
+								<tr>
+									<td class='bd'>元宝</td>
+									<td>#num2Money($!{data.user.gold_count})</td>
+									<td class='bd'>注册时间</td>
+									<td>#formatDate($!{data.user.create_time})</td>
+								</tr>
+								<tr>
+									<td class='bd'>房间号</td>
+									<td>$!{data.user.group_id}</td>
+									<td class='bd'>场数</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class='bd'>庄数</td>
+									<td></td>
+									<td class='bd'>钓鱼数</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td class='bd'>单手最高</td>
+									<td></td>
+									<td class='bd'>单场最高</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		#parse('_pagelet/js.html')
+		<script type='text/javascript'
+			src='${conf.html.virtualPath}public/assets/js/iframe.js'></script>
+		<script>
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+#parse('_pagelet/constant.html')
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>转账记录</title>
+		#parse('_pagelet/header.html')
+		<link rel='stylesheet' type='text/css' media='screen' href='${conf.html.virtualPath}public/assets/css/iframe.css' />
+	</head>
+	<body>
+		<div class='container'>
+			<div class='row'>
+				<div class='col-sm-12 col-md-12'>
+					<ol class='breadcrumb'>
+						<li class='active'><i class='fa fa-home fa-fw'></i> 首页</li>
+						<li class='active'><a href='javascript:location.reload();'>转账记录</a></li>
+					</ol>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='col-sm-12 col-md-12'>
+					<div class='panel panel-default table-responsive'>
+						<table id='table1' data-olx-type='olx.grid'
+							class='table table-bordered table-hover table-condensed table-striped'
+							data-url='' data-current='1' data-pagesize='20' data-count='561'>
+							<thead>
+								<tr>
+									<th class='ta'>#</th>
+									<th>转账人</th>
+									<th>元宝</th>
+									<th>转账时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>#set ($i=1)
+								#foreach($!doc in $!data.records)<tr>
+									<td class='ta'>$i#set($i=$i+1)</td>
+									<td>$!{doc.target_nickname}</td>
+									<td>#num2Money($!{doc.gold_num})</td>
+									<td>#formatDate($!{doc.create_time})</td>
+									<td>
+										<a href='javascript:jump("$!{doc.target_id}")'>转账</a>
+									</td>
+								</tr>#end
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		#parse('_pagelet/js.html')
+		<script type='text/javascript' src='${conf.html.virtualPath}public/assets/js/iframe.js'></script>
+<script>
+function jump(id){
+  top.location.href='/u/#page/transfer?id='+ id;
+}
+</script>
+	</body>
+</html>

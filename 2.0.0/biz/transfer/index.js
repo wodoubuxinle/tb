@@ -1,0 +1,1 @@
+"use strict";exports.gold=require("./gold"),exports.findGoldBySource=require("./findGoldBySource");

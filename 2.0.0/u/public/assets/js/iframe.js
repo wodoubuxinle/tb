@@ -1,0 +1,1 @@
+"use strict";function n(n){parent.location.href=parent.location.pathname+n}!function(n){var e=function(){parent&&parent.resizeInnerPage&&parent.resizeInnerPage(n(document.body))};n(window).load(e),n(window).resize(e);var t=n.fn.html;n.fn.html=function(){t.apply(this,arguments),e()}}($);

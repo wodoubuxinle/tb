@@ -1,0 +1,1 @@
+"use strict";exports.ready=require("./ready");
